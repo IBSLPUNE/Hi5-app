@@ -1,0 +1,137 @@
+page-menu {
+
+}
+page-menu img {
+    width: 40px;
+    height: 40px;
+}
+.header img{
+  width: 30px;
+    height: 30px;
+	border-radius: 12px;
+}
+
+.bar-button-menutoggle-md ion-icon{
+	font-size: 1.7rem;
+}
+
+.userLogedIn {
+    font-size: 1.2rem;
+    color: white;
+    margin: 0;
+	
+}
+
+.userLogedIn span {
+    top: -8px;
+    position: relative;
+}
+
+.userLogedIn img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border-color: rgb(246,246,246);
+    border-style: none;
+    border-width: 0px;
+    border-image-outset: 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    box-sizing: border-box;
+    color: rgb(246,246,246);
+    text-shadow: rgba(255, 255, 255, 0.25) 0px 1px 0px;
+}
+
+
+
+.toolbar-background-md,
+.toolbar-ios ion-title,
+.toolbar-background-wp {
+    background-color: #e31b23; //red 
+}
+
+.toolbar-title-md, .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default,
+.toolbar-title-ios, .bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default,
+.toolbar-title-wp, .bar-button-default-wp, .bar-button-clear-wp-default, .bar-button-wp-default {
+    color: white;
+}
+
+.item-input .label-md, .item-select .label-md, .item-datetime .label-md,
+.item-input .label-wp, .item-select .label-wp, .item-datetime .label-wp {
+    color: black;
+}
+
+.pgLogin ion-title, .pgMenu ion-title, .text-center {
+    text-align: center;
+}
+
+.searchbar-md {
+    padding: 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.clsCursorPointer {
+    cursor: pointer;
+}
+
+.grid, .item-md {
+    background-color: #F5F5F5; // menu 
+}
+
+.item-md {
+    padding-left: 16px;
+}
+.scroll-content {
+    background-color: #E0E0E0;
+    padding: 15px !important;
+    box-sizing: border-box;
+}
+
+.divBox2 {
+    border-radius: 3px;
+    position: relative;
+    overflow-y: scroll !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+    border-top: 3px solid #d2d6de;
+    background-color: #F5F5F5;
+    height: 80%;
+}
+.divBoxmin {
+    border-radius: 3px;
+    position: relative;
+    overflow: auto;
+    max-height: 360px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+    border-top: 3px solid #d2d6de;
+    background-color: #F5F5F5;
+    height: 85%;
+    
+}
+.divBox {
+    border-radius: 3px;
+    position: relative;
+    overflow: auto;
+    max-height: 500px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+    border-top: 3px solid #d2d6de;
+    background-color: #F5F5F5;
+    height: 90%;
+    
+}
+.image {
+     height: 20vw; 
+     width: 20vw; 
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 2px gray;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    align: center;
+} 
+

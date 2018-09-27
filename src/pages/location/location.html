@@ -1,0 +1,65 @@
+<!--
+  Generated template for the LocationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Attendance</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="divBox2">
+    <ion-grid class="text-left">
+	  <!-- <h3>Current Latitude: {{locationTracker.lat}}</h3>
+    <h3>Current Longitude: {{locationTracker.lng}}</h3> -->
+    <!--  <h3>Current Place: {{locationTracker.addr}}</h3>  -->
+     <button ion-button full primary (click)="locationData()">Punch</button>
+    <!--  <button ion-button full primary (click)="stop()">Stop Tracking</button> -->
+     </ion-grid>
+   
+      <ion-list>
+        <ion-row>
+           <ion-col class="bold"  col-2>
+              Sr.No
+            </ion-col> 
+            <ion-col class="bold"  col-4>
+              Date
+            </ion-col>
+            <ion-col class="bold" col-4>
+              Time
+            </ion-col>
+            <ion-col col-2 class ="bold text-center">
+              Action
+            
+            </ion-col>
+        </ion-row>
+      <ion-item text-wrap *ngFor="let epl of employee_plan_list_data | paginate:{ itemsPerPage:5, currentPage:p} ; let i = index">
+        <div class="clsCursorPointer">
+          <ion-row>
+            <ion-col col-2>
+               {{i+1}}
+            </ion-col> 
+            <ion-col col-4>
+              {{epl.date | date: 'dd-MMM-yyyy'}}
+            </ion-col>
+            <ion-col col-4>
+              {{epl.time}}
+            </ion-col> 
+            <div>
+              <button ion-button icon-only outline small (click)="showDetails(epl)">
+                    <ion-icon name="eye"></ion-icon>
+              </button>
+            </div>   
+          </ion-row>
+        </div>
+      </ion-item>
+        <pagination-controls (pageChange)="p =$event"></pagination-controls>
+    </ion-list>
+   </div>
+</ion-content>

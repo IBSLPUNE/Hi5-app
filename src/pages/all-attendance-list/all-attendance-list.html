@@ -1,0 +1,82 @@
+<!--
+  Generated template for the AllAttendanceListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>SR Attendance</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<div class="divBox2">
+		<ion-grid class="grdLeaveHistory">
+          <ion-item>
+             <span>From Date</span>            
+             <span ion-datepicker (ionChanged)="setDate($event);" [(value)]="selectedDate" [min]="date_Min" [max]="date_Max" clear class="ScheduleDate datePickerSpan">
+             <span>{{selectedDate | date: 'dd-MMM-yyyy'}} <ion-icon name="clipboard" item-left></ion-icon> </span>
+             </span>
+          </ion-item>
+          <ion-item>
+             <span>To Date</span>       
+             <span ion-datepicker (ionChanged)="setDate1($event);" [(value)]="selectedDate1" [min]="date_Min" [max]="date_Max" clear class="ScheduleDate datePickerSpan">
+             <span>{{selectedDate1 | date: 'dd-MMM-yyyy'}} <ion-icon name="clipboard" item-left></ion-icon> </span>
+             </span>
+          </ion-item>
+          <ion-item>
+             <ion-label>SR Name</ion-label>
+             <ion-select [(ngModel)]="member_type" name="Agency" [compareWith]="compareFn" interface="popover" (ionChange)="getAllAdminAttendanceList()" multiple="false">
+             <ion-option *ngFor="let atd of member_type_data" [value]="atd">{{atd.text}}</ion-option>
+             </ion-select>
+          </ion-item>
+        <ion-row>
+            <ion-col class="bold text-center">
+               <ion-searchbar placeholder="Search" [(ngModel)]="searchName"></ion-searchbar>
+            </ion-col>
+        </ion-row>
+ 
+        <ion-row>
+        	<!-- <ion-col col-2 class="bold text-center">
+            SR.No
+          </ion-col> -->
+          <ion-col col-4 class ="bold text-center">
+               Name
+          </ion-col>
+          <ion-col col-4 class ="bold text-center">
+               Date
+          </ion-col>
+           <ion-col col-2 class ="bold text-center">
+               Time
+          </ion-col>
+          <ion-col col-2 class ="bold text-center">
+            	Action
+          </ion-col>
+	      </ion-row>
+        <ion-row *ngFor="let eld of member_data | empAttendance: searchName | paginate:{ itemsPerPage:6, currentPage:p}">
+          <!-- <ion-col col-2 class ="text-center">
+                {{i+1}}
+          </ion-col> -->
+         	<ion-col col-4 class ="text-center">
+                {{eld.first_name}} {{eld.last_name}}
+          </ion-col>
+          <ion-col col-4 class ="text-center">
+                {{eld.date | date:'dd-MM-yyyy'}} 
+          </ion-col>
+           <ion-col col-2 class ="text-center">
+                {{eld.time}}
+          </ion-col>
+          <ion-col col-2>
+            <button  ion-button icon-only outline small class="view" (click)="showDetails(eld)">
+                <ion-icon name="eye"></ion-icon>
+            </button>  
+          </ion-col>
+        </ion-row>
+			   <pagination-controls (pageChange)="p =$event"></pagination-controls>
+    </ion-grid>
+  </div>
+</ion-content>

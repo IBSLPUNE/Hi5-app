@@ -1,0 +1,59 @@
+<!--
+  Generated template for the SubDistributorPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Retailer</ion-title>
+     <ion-buttons end>
+            <button ion-button (click)="closeModal()">Close</button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<div class="divBox2">
+    <form (submit)="saveSubDistributorData()"> 
+            <ion-item>
+                <ion-label>Distributor</ion-label>
+               <ion-select [(ngModel)]="distributor_type" name="Agency" [compareWith]="compareFn" interface="popover" (ionChange)="getRootType()" multiple="false">
+                <ion-option *ngFor="let agtd of distributor_type_data" [value]="agtd">{{agtd.text}}</ion-option>
+               </ion-select>
+            </ion-item>
+            <ion-item>
+            <ion-label>Street Root</ion-label>
+            <ion-select [(ngModel)]="street_root" name="Street-Root" [compareWith]="compareFn" interface="popover" multiple="false">
+                <ion-option *ngFor="let srd of street_root_data" [value]="srd">{{srd.text}}</ion-option>
+            </ion-select>
+        </ion-item>
+            <ion-item>
+                <ion-label>Name</ion-label>
+                <ion-textarea [(ngModel)]="Name" name="Name" placeholder="Name"></ion-textarea>
+            </ion-item>
+            <ion-item>
+                <ion-label>Area</ion-label>
+                <ion-input [(ngModel)]="Area" name="Area" (ngModelChange)="textAreaEmpty()" placeholder="Area"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Mobile No.</ion-label>
+                <ion-input [(ngModel)]="mobileNo" name="mobileNo" type="tel" maxlength="10" (ngModelChange)="textAreaEmpty()" placeholder="9876543210"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Description</ion-label>
+                <ion-input [(ngModel)]="Description" name="Description" (ngModelChange)="textAreaEmpty()" placeholder="Description"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Address</ion-label>
+                <ion-textarea [(ngModel)]="Address" name="Address" (ngModelChange)="textAreaEmpty()" placeholder="Address"></ion-textarea>
+            </ion-item>
+            <div padding>
+                <button ion-button full color="secondary" type="submit">Create SubDistibutor</button>
+            </div>
+    </form> 
+  </div>
+</ion-content>

@@ -1,0 +1,131 @@
+<!--
+  Generated template for the EventAllListDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Event Detail</ion-title>
+      <ion-buttons end>
+     <button ion-button (click)="closeModal()">Close</button> 
+     </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<div class="divBox2">
+
+     <ion-row>
+            <ion-col col-6>
+           <div padding>
+            <button ion-button full color="primary" type="button" (click)="showModal(req_data)" [hidden]="req_data.event_status == 'Completed'">Number</button>
+        </div>
+      </ion-col>
+     <!--  <ion-col col-4>
+         <div padding>
+            <button ion-button full color="primary" type="button" (click)="ConfirmEvent(req_data)" [hidden]="req_data.event_status == 'Completed'">Sales</button>
+        </div>
+      </ion-col> -->
+       <ion-col col-6>
+         <div padding>
+         <button ion-button full color="primary" type="button" (click)="presentConfirm(req_data.id)" [hidden]="req_data.event_status == 'Completed'">
+               Close
+                    </button>
+                  </div>
+      </ion-col>
+      </ion-row>
+
+     <!--   <button ion-button icon-only outline small class="view" (click)="showModal(cof)" [hidden]="cof.event_status == 'Completed'">
+                        <ion-icon name="md-add-circle"></ion-icon>
+                    </button> 
+                     <button ion-button icon-only outline small class="view" (click)="ConfirmEvent(cof)" [hidden]="cof.event_status == 'Completed'">
+                        <ion-icon name="md-checkmark-circle"></ion-icon>
+                    </button>  -->
+
+
+         <ion-grid class="grdLeaveHistory">
+
+ <!--  <ion-row>
+        <ion-col>ID</ion-col>
+        <ion-col>{{req_data.id}}</ion-col>
+    </ion-row> -->
+   <!--  <ion-row>
+        <ion-col text-wrap class="bold text-left">Code</ion-col>
+        <ion-col *ngIf="req_data.code != 'undefined'">{{req_data.code}}</ion-col>
+    </ion-row> --> 
+    <ion-row>
+        <ion-col text-wrap class="bold text-left">Name</ion-col>
+        <ion-col>{{req_data.name}}</ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col text-wrap class="bold text-left">Description</ion-col>
+        <ion-col *ngIf="req_data.description != 'undefined'">{{req_data.description}}</ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col text-wrap class="bold text-left">Event Type</ion-col>
+        <ion-col> {{req_data.event_type}} </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col text-wrap class="bold text-left">Event Date</ion-col>
+        <ion-col>{{req_data.event_date | date:'dd-MM-yyyy'}}</ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col text-wrap class="bold text-left">Area</ion-col>
+        <ion-col *ngIf="req_data.description != 'undefined'">{{req_data.place}}</ion-col>
+    </ion-row>
+     <!-- <ion-row>
+        <ion-col text-wrap class="bold text-left">Address</ion-col>
+        <ion-col>{{req_data.address}}</ion-col>
+    </ion-row> 
+   
+     <ion-row>
+        <ion-col text-wrap class="bold text-left">Pin Code</ion-col>
+        <ion-col>{{req_data.pin_code}}</ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col text-wrap class="bold text-left">Country</ion-col>
+        <ion-col>{{req_data.country }}</ion-col>
+    </ion-row>
+     <ion-row>
+        <ion-col text-wrap class="bold text-left">State</ion-col>
+        <ion-col>{{req_data.state}}</ion-col>
+    </ion-row>
+      <ion-row>
+        <ion-col text-wrap class="bold text-left">District</ion-col>
+        <ion-col>{{req_data.district}}</ion-col>
+    </ion-row> -->
+     <ion-row>
+        <ion-col text-wrap class="bold text-left">Town</ion-col>
+        <ion-col *ngIf="req_data.town != 'undefined'">{{req_data.town}}</ion-col>
+    </ion-row>
+<!--<ion-row>
+        <ion-col text-wrap class="bold text-left">Village</ion-col>
+        <ion-col *ngIf="req_data.village != 'undefined'">{{req_data.village}}</ion-col>
+    </ion-row> -->
+    <ion-row>
+        <ion-col text-wrap class="bold text-left">City</ion-col>
+        <ion-col>{{req_data.city_id}}</ion-col>
+    </ion-row>
+     <ion-row>
+        <ion-col text-wrap class="bold text-left">SR</ion-col>
+        <ion-col>{{req_data.agent}}</ion-col>
+    </ion-row> 
+     <ion-row>
+        <ion-col text-wrap class="bold text-left">Status</ion-col>
+        <ion-col>{{req_data.event_status}}</ion-col>
+    </ion-row> 
+            <ion-row>
+        <ion-col text-wrap class="bold text-left">Total Contact</ion-col>
+        <ion-col>{{mobile_no_count}}</ion-col>
+    </ion-row> 
+     <!-- <ion-row>
+        <ion-col text-wrap class="bold text-left">Secondary Value</ion-col>
+        <ion-col>{{req_data.secondary_cell}}</ion-col>
+    </ion-row>    --> 
+  </ion-grid>
+ </div>
+</ion-content>

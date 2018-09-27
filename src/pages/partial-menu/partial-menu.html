@@ -1,0 +1,24 @@
+<!--
+  Generated template for the PartialMenuPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+ <!--  <ion-navbar>
+    <ion-title>partial-menu</ion-title>
+  </ion-navbar> -->
+
+</ion-header>
+
+
+<ion-content padding>
+	  <ion-tabs tabsHideOnSubPages="true">
+        <ion-tab [root]="menu" tabTitle="Employee" tabIcon="home" tabsHideOnSubPages="false"></ion-tab>
+        <ion-tab [root]="manager_menu" tabTitle="SO" tabIcon="md-people" tabsHideOnSubPages="false" [show]="bManager"></ion-tab>
+        <ion-tab [root]="zone_menu" tabTitle="ASM" tabIcon="md-people" tabsHideOnSubPages="false" [show]="bZone"></ion-tab>
+        <ion-tab [root]="admin_menu" tabTitle="Admin" tabIcon="md-laptop" tabsHideOnSubPages="false" [show]="bAdmin"></ion-tab>
+    </ion-tabs>
+
+</ion-content>

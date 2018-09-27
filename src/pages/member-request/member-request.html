@@ -1,0 +1,105 @@
+<!--
+  Generated template for the MemberRequestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+    <ion-title>New SR</ion-title>
+        <ion-buttons end>
+          <button ion-button (click)="closeModal()">Close</button> 
+        </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	<div class="divBox2">
+        <form (submit)="saveMemberData()">  
+    	    <ion-item>
+                <ion-label >Code</ion-label>
+                <ion-input [(ngModel)]="Code" name="Code" placeholder="A101"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>First Name</ion-label>
+                <ion-textarea [(ngModel)]="firstName" name="firstName" type="text" placeholder="Tanmay"></ion-textarea>
+            </ion-item>
+            <ion-item>
+                <ion-label>Middle Name</ion-label>
+                <ion-textarea [(ngModel)]="middleName" name="middleName" type="text" placeholder="singh"></ion-textarea>
+            </ion-item>
+            <ion-item>
+                <ion-label>Last Name</ion-label>
+                <ion-textarea [(ngModel)]="lastName" name="lastName" type="text" placeholder="Rajput"></ion-textarea>
+            </ion-item>
+            <ion-item>
+                <ion-label>Gender</ion-label>
+                <ion-select [(ngModel)]="gender" name="Gender" [compareWith]="compareFn" interface="popover" multiple="false">
+                    <ion-option *ngFor="let gd of gender_data" [value]="gd">{{gd.text}}</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>Email</ion-label>
+                <ion-input [(ngModel)]="Email" name="Email" type="email" placeholder="tanmay@gmail.com"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Official No.</ion-label>
+                <ion-input [(ngModel)]="officialNo" name="officialNo" type="tel" maxlength="10" placeholder="9876543210"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Personal No.</ion-label>
+                <ion-input [(ngModel)]="personalNo" name="personalNo" type="tel" maxlength="10" placeholder="9876543210"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Emergency No.</ion-label>
+                <ion-input [(ngModel)]="emergencyNo" name="emergencyNo" type="tel" maxlength="10" placeholder="9876543210"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Blood Group</ion-label>
+                <ion-select [(ngModel)]="blood_type" name="Blood" [compareWith]="compareFn" interface="popover" multiple="false">
+                   <ion-option *ngFor="let btd of blood_type_data" [value]="btd">{{btd.text}}</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <span>Date Of Birth</span>
+                <span ion-datepicker (ionChanged)="setDate($event, 'Date');" name="selectedDate" [(value)]="selectedDate" [min]="date_Min" [max]="date_Max" clear class="ScheduleDate datePickerSpan">
+                <span>{{selectedDate | date: 'dd-MMM-yyyy'}} <ion-icon name="clipboard" item-left></ion-icon> </span>
+                </span>
+            </ion-item>
+            <ion-item>
+                <ion-label>Address</ion-label>
+                <ion-textarea [(ngModel)]="Address" name="Address" type="text" placeholder="Address"></ion-textarea>
+            </ion-item>
+            <ion-item>
+                <ion-label>Pin Code</ion-label>
+                <ion-input [(ngModel)]="pinCode" name="PinCode" type="tel" maxlength="6" placeholder="456784"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>County</ion-label>
+                <ion-select [(ngModel)]="county_type" name="County" [compareWith]="compareFn" interface="popover" (ionChange)="getStateType()" multiple="false">
+                <ion-option *ngFor="let ctd of county_type_data" [value]="ctd">{{ctd.text}}</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>State</ion-label>
+                <ion-select [(ngModel)]="state_type" name="State" [compareWith]="compareFn" interface="popover" (ionChange)="getDistrictType()" multiple="false">
+                   <ion-option *ngFor="let std of state_type_data" [value]="std">{{std.text}}</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+            <ion-label>District</ion-label>
+                <ion-select [(ngModel)]="district_type" name="District" [compareWith]="compareFn" interface="popover"  multiple="false">
+                   <ion-option *ngFor="let dtd of district_type_data" [value]="dtd">{{dtd.text}}</ion-option>
+                </ion-select>
+            </ion-item>  
+            <ion-item>
+                <ion-label>City</ion-label>
+                <ion-input [(ngModel)]="City" name="City" type="text" placeholder="Pune"></ion-input>
+            </ion-item>
+            <div padding>
+                <button ion-button full color="secondary" type="submit">Create SR</button>
+            </div>
+    	</form> 
+    </div>
+</ion-content>

@@ -1,0 +1,87 @@
+<!--
+  Generated template for the AgencyRequestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>New SO</ion-title>
+      <ion-buttons end>
+     <button ion-button (click)="closeModal()">Close</button> 
+     </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	  <div class="divBox2">
+       <form (submit)="saveAgencyData()">
+            <ion-item>
+                 <ion-label>Company</ion-label>
+                 <ion-select [(ngModel)]="company_type" name="Company" [compareWith]="compareFn" interface="popover" multiple="false">
+                 <ion-option *ngFor="let ctd of company_type_data" [value]="ctd">{{ctd.text}}</ion-option>
+                 </ion-select>
+            </ion-item>  
+    	    <!--   <ion-item>
+                <ion-label>Code</ion-label>
+                <ion-input [(ngModel)]="Code" name="Code" (ngModelChange)="textAreaEmpty()" placeholder="A101"></ion-input>
+            </ion-item> -->
+             <ion-item>
+                <ion-label>Name</ion-label>
+                <ion-textarea [(ngModel)]="Name" name="Name" placeholder="IBSL"></ion-textarea>
+            </ion-item>
+            <ion-item>
+                <ion-label>Full Name</ion-label>
+                <ion-textarea [(ngModel)]="fullName" name="fullName" (ngModelChange)="textAreaEmpty()" placeholder="Indiba Business Solutions"></ion-textarea>
+            </ion-item>
+            <ion-item>
+                <ion-label>Address</ion-label>
+                <ion-textarea [(ngModel)]="Address" name="Address" (ngModelChange)="textAreaEmpty()" placeholder="Address"></ion-textarea>
+            </ion-item>
+            <ion-item>
+                <ion-label>Pin Code</ion-label>
+                <ion-input [(ngModel)]="pinCode" name="pinCode" type="tel" maxlength="6" (ngModelChange)="textAreaEmpty()" placeholder="456784"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>County</ion-label>
+                <ion-select [(ngModel)]="county_type" name="County" [compareWith]="compareFn" interface="popover" (ionChange)="getStateType()" multiple="false">
+                     <ion-option *ngFor="let ctd of county_type_data" [value]="ctd">{{ctd.text}}</ion-option>
+                </ion-select>
+           </ion-item>
+            <ion-item>
+                <ion-label>State</ion-label>
+                <ion-select [(ngModel)]="state_type" name="State" [compareWith]="compareFn" interface="popover" (ionChange)="getDistrictType()" multiple="false">
+                    <ion-option *ngFor="let std of state_type_data" [value]="std">{{std.text}}</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>District</ion-label>
+                <ion-select [(ngModel)]="district_type" name="District" [compareWith]="compareFn" interface="popover" multiple="false">
+                    <ion-option *ngFor="let dtd of district_type_data" [value]="dtd">{{dtd.text}}</ion-option>
+                </ion-select>
+            </ion-item>  
+            <ion-item>
+                <ion-label>City</ion-label>
+                <ion-input [(ngModel)]="City" name="City" (ngModelChange)="textAreaEmpty()" placeholder="Pune"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Contact No.</ion-label>
+                <ion-input [(ngModel)]="contactNo" name="contactNo" maxlength="10" type="tel" (ngModelChange)="textAreaEmpty()" placeholder="9876543210"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Email</ion-label>
+                <ion-input [(ngModel)]="Email" name="Email" (ngModelChange)="textAreaEmpty()" placeholder="ibsl@gmail.com" ></ion-input>>
+            </ion-item>
+            <ion-item>
+                <ion-label>Website</ion-label>
+                <ion-textarea [(ngModel)]="Website" name="Website" (ngModelChange)="textAreaEmpty()" placeholder="www.ibsl.com"></ion-textarea>
+            </ion-item>
+            <div padding>
+                <button ion-button full color="secondary" type="submit">Create SO</button>
+            </div>
+       </form>  
+    </div>
+</ion-content>

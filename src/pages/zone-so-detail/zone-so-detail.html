@@ -1,0 +1,78 @@
+<!--
+  Generated template for the ZoneSoDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title> SO Detail </ion-title>
+     <ion-buttons end>
+     <button ion-button (click)="closeModal()">Close</button> 
+     </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<div class="divBoxmin">
+
+        <ion-grid class="grdLeaveHistory">
+  
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">Code</ion-col>
+                <ion-col *ngIf="req_data.code != 'undefined'">{{req_data.code}}</ion-col>
+            </ion-row> 
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">Name</ion-col>
+                <ion-col>{{req_data.name}}</ion-col>
+            </ion-row> 
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">Full Name</ion-col>
+                <ion-col *ngIf="req_data.full_name != 'undefined'">{{req_data.full_name}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">Address</ion-col>
+                <ion-col *ngIf="req_data.pin_code != 'undefined'">{{req_data.address}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">Pin Code</ion-col>
+                <ion-col *ngIf="req_data.pin_code != 'undefined'">{{req_data.pin_code}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">Country</ion-col>
+                <ion-col>{{req_data.country}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">State</ion-col>
+                <ion-col>{{req_data.state}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">District</ion-col>
+                <ion-col>{{req_data.district}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">City</ion-col>
+                <ion-col *ngIf="req_data.city != 'undefined'">{{req_data.city}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">Contact No.</ion-col>
+                <ion-col *ngIf="req_data.contact_no != 'undefined'">{{req_data.contact_no}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">Email</ion-col>
+                <ion-col *ngIf="req_data.email != 'undefined'">{{req_data.email}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">Web Site</ion-col>
+                <ion-col *ngIf="req_data.web_site != 'undefined'">{{req_data.web_site}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">Company</ion-col>
+                <ion-col *ngIf="req_data.company != 'undefined'">{{req_data.company}}</ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

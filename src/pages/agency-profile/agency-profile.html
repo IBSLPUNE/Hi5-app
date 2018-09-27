@@ -1,0 +1,146 @@
+<!--
+  Generated template for the AgencyProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{parent}} Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+	<div class="divBox">
+
+ <ion-grid class="grdLeaveHistory">
+         <ng-container *ngFor=" let cof of agancy_data">
+           <ion-row>
+          <ion-col col-3>
+                 <img src='assets/imgs/demo_logo.jpg' alt='Personal details' height='70' width='70' />
+              </ion-col>
+              <ion-col class="bold text-left" col-9>
+                  <br/>
+                   {{cof.code}}
+                   <br/>
+                    {{cof.name}}
+                    <br/>
+                     {{cof.email}}  
+                </ion-col>
+              </ion-row>
+           
+          <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                   Full Name 
+                </ion-col>
+                 <ion-col class="text-left" *ngIf="cof.full_name != 'undefined'">
+
+                {{cof.full_name}}
+              </ion-col>
+	
+      </ion-row>
+      
+        <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                   Address
+                </ion-col>
+                 <ion-col class="text-left" *ngIf="cof.address != 'undefined'">
+
+                {{cof.address}}
+              </ion-col>
+	
+      </ion-row>
+        <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                   Pin Code
+                </ion-col>
+                 <ion-col class="text-left" *ngIf="cof.pin_code != 'undefined'">
+
+                {{cof.pin_code}}
+              </ion-col>
+	
+      </ion-row>
+        <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                   Country
+                </ion-col>
+                 <ion-col class="text-left" *ngIf="cof.country != 'undefined'">
+
+                {{cof.country}}
+              </ion-col>
+  
+      </ion-row>
+        <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                   State
+                </ion-col>
+                 <ion-col class="text-left" *ngIf="cof.state != 'undefined'">
+
+                {{cof.state}}
+              </ion-col>
+  
+      </ion-row>
+        <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                   District
+                </ion-col>
+                 <ion-col class="text-left" *ngIf="cof.district != 'undefined'">
+
+                {{cof.district}}
+              </ion-col>
+  
+      </ion-row>
+  
+       
+        <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                   City
+                </ion-col>
+                 <ion-col class="text-left" *ngIf="cof.city != 'undefined'">
+
+                {{cof.city}}
+              </ion-col>
+	
+      </ion-row>
+        <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                   Contact No
+                </ion-col>
+                 <ion-col class="text-left" *ngIf="contact_no != 'undefined'">
+
+                {{cof.contact_no}}
+              </ion-col>
+	
+      </ion-row>
+       
+ <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                   Web Site
+                </ion-col>
+                 <ion-col class="text-left" *ngIf="cof.web_site != 'undefined'">
+
+                {{cof.web_site}}
+              </ion-col>
+	
+      </ion-row> 
+      <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                   Company Name
+                </ion-col>
+                 <ion-col class="text-left" *ngIf="cof.company != 'undefined'">
+
+                {{cof.company}}
+              </ion-col>
+	
+      </ion-row>
+         </ng-container>
+
+</ion-grid>
+
+</div>
+
+</ion-content>

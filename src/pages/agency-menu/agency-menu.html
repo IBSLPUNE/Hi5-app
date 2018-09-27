@@ -1,0 +1,103 @@
+<!--
+  Generated template for the AgencyMenuPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>SO Menu</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	 <div class="divBox2" style="height: 100%;">
+        <ion-grid class="text-center">
+            <ion-row>
+               <ion-col>
+                 <div class="clsCursorPointer" (click)="gotoAnotherPage('AllAgency')">
+                     <div>
+                           <label></label>
+                       </div>
+                        <div>
+                            <img src='assets/imgs/images (1).png' alt='AllAgency' width="40" height="40"/>
+                        </div>
+                        <div>
+                            <strong>SO</strong>
+                        </div>
+                  </div>
+               </ion-col>
+             	 <!--  <ion-col>
+                  <div class="clsCursorPointer" (click)="gotoAnotherPage('AllList')">
+                     <div>
+                           <label></label>
+                       </div>
+                        <div>
+                            <img src='assets/imgs/members.png' alt='AllList' width="40" height="40"/>
+                        </div>
+                        <div>
+                            <strong>SR</strong>
+                        </div>
+                  </div>
+               </ion-col>  -->
+                 <ion-col>
+                   <div class="clsCursorPointer" (click)="gotoAnotherPage('UserInfo')">
+                     <div>
+                           <label></label>
+                       </div>
+                        <div>
+                            <img src='assets/imgs/agency2.png' alt='UserInfo' width="40" height="40"/>
+                        </div>
+                        <div>
+                            <strong>User List</strong>
+                        </div>
+                  </div>
+               </ion-col>
+               <ion-col>
+                   <div class="clsCursorPointer" (click)="gotoAnotherPage('AllEvent')">
+                     <div>
+                           <label></label>
+                       </div>
+                        <div>
+                            <img src='assets/imgs/eventDetails.png' alt='AllList' width="40" height="40"/>
+                        </div>
+                        <div>
+                            <strong>Event</strong>
+                        </div>
+                  </div>
+                </ion-col>
+           </ion-row>
+           <ion-row>
+                
+                <ion-col>
+                    <div class="clsCursorPointer" (click)="gotoAnotherPage('AgencySalesList')">
+                        <div>
+                            <img src='assets/imgs/sales.png' alt='Sales' width="40" height="40"/>
+                        </div>
+                        <div>
+                            <strong>Daily Sales</strong>
+                        </div>
+                    </div>
+                </ion-col>
+                <ion-col>
+                   <div class="clsCursorPointer" (click)="gotoAnotherPage('AttendanceList')">
+                        <div>
+                            <img src='assets/imgs/attendance.png' alt='Location' width="40" height="40"/>
+                        </div>
+                        <div>
+                            <strong>Attendance</strong>
+                        </div>
+                    </div>
+                </ion-col>
+                <ion-col>
+                </ion-col>
+                
+           </ion-row>
+         </ion-grid>
+     </div>
+
+
+</ion-content>

@@ -1,0 +1,170 @@
+<!--
+  Generated template for the AgentProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>SR Profile</ion-title>
+ <ion-buttons end>
+           <button ion-button (click)="gotoAnotherPage()">
+           Profile
+             <!--  <ion-icon name="menu">Profile</ion-icon> -->
+             </button> 
+           </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+	<div class="divBox2">
+
+ <ion-grid class="grdLeaveHistory">
+         <ng-container *ngFor=" let cof of membertype">
+         <ion-row>
+          <ion-col col-3>
+                <img src="{{userImage}}" (error)="updateUrl()" alt='image' width="70" height="70"/>
+              </ion-col>
+                <ion-col class="bold text-left" col-9>
+                  <br/>
+                   {{cof.code}}
+                   <br/>
+                    {{cof.first_name}} {{cof.last_name}}
+                    <br/>
+                     {{cof.email}}
+                </ion-col>
+             </ion-row>
+      
+        <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                  Gender
+                </ion-col>
+                 <ion-col class="text-left">
+
+                {{cof.gender}}
+              </ion-col>
+	
+      </ion-row>
+        <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                   Offical No
+                </ion-col>
+                 <ion-col class="text-left" [hidden]="cof.offical_contact_no == 'undefined'">
+
+                {{cof.offical_contact_no}}
+              </ion-col>
+	
+      </ion-row>
+        <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                   Personal No
+                </ion-col>
+                 <ion-col class="text-left" [hidden]="cof.personal_contact_no == 'undefined'">
+
+                {{cof.personal_contact_no}}
+              </ion-col>
+	
+      </ion-row>
+        <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                   Emergency No
+                </ion-col>
+                 <ion-col class="text-left" [hidden]="cof.emergency_contact_no == 'undefined'">
+
+                {{cof.emergency_contact_no}}
+              </ion-col>
+	
+      </ion-row>
+        <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                   Blood Group
+                </ion-col>
+                 <ion-col class="text-left">
+
+                {{cof.blood_group}}
+              </ion-col>
+	
+      </ion-row>
+        <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                   DOB
+                </ion-col>
+                 <ion-col class="text-left">
+
+                {{cof.date_of_birth | date:'dd-MM-yyyy'}}
+              </ion-col>
+	
+      </ion-row>
+        <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                   Address
+                </ion-col>
+                 <ion-col class="text-left">
+
+                {{cof.address}}
+              </ion-col>
+	
+      </ion-row>
+        <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                   Pin Code
+                </ion-col>
+                 <ion-col class="text-left" [hidden]="cof.pin_code == 'undefined'">
+
+                {{cof.pin_code}}
+              </ion-col>
+	
+      </ion-row>
+        <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                   Country
+                </ion-col>
+                 <ion-col class="text-left">
+
+                {{cof.country}}
+              </ion-col>
+	
+      </ion-row>
+        <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                   State
+                </ion-col>
+                 <ion-col class="text-left">
+
+                {{cof.state}}
+              </ion-col>
+  
+      </ion-row>
+        <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                   District
+                </ion-col>
+                 <ion-col class="text-left">
+
+                {{cof.district}}
+              </ion-col>
+  
+      </ion-row>
+      <ion-row>
+                <ion-col text-wrap class="bold text-left">
+                  SO
+                </ion-col>
+                 <ion-col class="text-left">
+
+                {{cof.agency_id}}
+              </ion-col>
+	
+      </ion-row> 
+     
+      </ng-container>
+
+</ion-grid>
+
+</div>
+
+
+</ion-content>

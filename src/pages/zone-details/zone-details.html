@@ -1,0 +1,75 @@
+<!--
+  Generated template for the ZoneDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Zone Details</ion-title>
+    <ion-buttons end>
+            <button ion-button (click)="closeModal()">Close</button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div class="divBoxmin">
+
+         <ion-grid class="grdLeaveHistory">
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">Code</ion-col>
+                <ion-col *ngIf="req_data.code != 'undefined'">{{req_data.code}}</ion-col>
+            </ion-row> 
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">Zone</ion-col>
+                <ion-col *ngIf="req_data.zone != 'undefined'">{{req_data.zone}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">Name</ion-col>
+                <ion-col *ngIf="req_data.name != 'undefined'">{{req_data.name}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">Address</ion-col>
+                <ion-col *ngIf="req_data.address != 'undefined'">{{req_data.address}}</ion-col>
+            </ion-row> 
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">Country</ion-col>
+                <ion-col *ngIf="req_data.country_id != 'undefined'">{{req_data.country_id}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">State</ion-col>
+                <ion-col *ngIf="req_data.state_id != 'undefined'">{{req_data.state_id}}</ion-col>
+            </ion-row> 
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">District</ion-col>
+                <ion-col *ngIf="req_data.district_id != 'undefined'">{{req_data.district_id}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">Contact No.</ion-col>
+                <ion-col *ngIf="req_data.contact_no != 'undefined'">{{req_data.contact_no}}</ion-col>
+            </ion-row> 
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">Email</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col *ngIf="req_data.email != 'undefined'">{{req_data.email}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">Web site</ion-col>
+                <ion-col *ngIf="req_data.web_site != 'undefined'">{{req_data.web_site}}</ion-col>
+            </ion-row> 
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">Company</ion-col>
+                <ion-col *ngIf="req_data.company_id != 'undefined'">{{req_data.company_id}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col text-wrap class="bold text-left">Status</ion-col>
+                <ion-col *ngIf="req_data.status != 'undefined'">{{req_data.status ? "Actvie":"Inactive"}}</ion-col>
+            </ion-row>
+        </ion-grid>
+	</div>
+</ion-content>

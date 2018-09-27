@@ -1,0 +1,88 @@
+<!--
+  Generated template for the EmployeeAllListDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>SR Detail</ion-title>
+     <ion-buttons end>
+     <button ion-button (click)="closeModal()">Close</button> 
+     </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<div class="divBoxmin">
+    <ion-grid class="grdLeaveHistory">
+      <ion-row>
+        <ion-col text-wrap class="bold text-left">Code</ion-col>
+        <ion-col *ngIf="req_data.code != 'undefined'">{{req_data.code}}</ion-col>
+      </ion-row> 
+      <ion-row>
+        <ion-col text-wrap class="bold text-left">Name</ion-col>
+        <ion-col>{{req_data.first_name}} {{req_data.last_name}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-wrap class="bold text-left">Gender</ion-col>
+        <ion-col *ngIf="req_data.gender != ''">{{req_data.gender}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-wrap class="bold text-left">Email</ion-col>
+        <ion-col *ngIf="req_data.email != 'undefined'">{{req_data.email}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-wrap class="bold text-left">Official No.</ion-col>
+        <ion-col *ngIf="req_data.offical_contact_no != 'undefined'">{{req_data.offical_contact_no}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-wrap class="bold text-left">Personal No.</ion-col>
+        <ion-col *ngIf="req_data.personal_contact_no != 'undefined'">{{req_data.personal_contact_no}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-wrap class="bold text-left">Emergency No.</ion-col>
+        <ion-col *ngIf="req_data.emergency_contact_no != 'undefined'">{{req_data.emergency_contact_no}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-wrap class="bold text-left">Blood Group.</ion-col>
+        <ion-col *ngIf="req_data.blood_group != 'undefined'">{{req_data.blood_group}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-wrap class="bold text-left">DOB</ion-col>
+        <ion-col>{{req_data.date_of_birth | date:'dd-MM-yyyy'}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-wrap class="bold text-left">Address</ion-col>
+        <ion-col *ngIf="req_data.address != 'undefined'">{{req_data.address}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-wrap class="bold text-left">Pin Code</ion-col>
+        <ion-col *ngIf="req_data.pin_code != 'undefined'">{{req_data.pin_code}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-wrap class="bold text-left">County</ion-col>
+        <ion-col>{{req_data.country}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-wrap class="bold text-left">State</ion-col>
+        <ion-col>{{req_data.state}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-wrap class="bold text-left">District</ion-col>
+        <ion-col>{{req_data.district}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-wrap class="bold text-left">SO</ion-col>
+        <ion-col>{{req_data.agency_id}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-wrap class="bold text-left">Status</ion-col>
+        <ion-col *ngIf="req_data.status != 'undefined'">{{req_data.status ? "Active":"Inactive"}}</ion-col>
+      </ion-row>
+    </ion-grid>
+	</div>
+</ion-content>

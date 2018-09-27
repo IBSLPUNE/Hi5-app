@@ -1,0 +1,56 @@
+<!--
+  Generated template for the SubDistributorDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Retailer Detail</ion-title>
+    <ion-buttons end>
+     <button ion-button (click)="closeModal()">Close</button> 
+     </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<div class="divBoxmin">
+    <ion-grid class="grdLeaveHistory">
+      <ion-row>
+          <ion-col text-wrap class="bold text-left">Distributor</ion-col>
+          <ion-col>{{req_data.distributor}}</ion-col>
+      </ion-row>
+       <ion-row>
+          <ion-col text-wrap class="bold text-left">Street Root</ion-col>
+          <ion-col>{{req_data.root_id}}</ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col text-wrap class="bold text-left">Name</ion-col>
+          <ion-col>{{req_data.name}}</ion-col>
+      </ion-row> 
+      <ion-row>
+          <ion-col text-wrap class="bold text-left">Mobile No</ion-col>
+          <ion-col *ngIf="req_data.mobile_number!= 'undefined'">{{req_data.mobile_number}}</ion-col>
+      </ion-row> 
+      <ion-row>
+          <ion-col text-wrap class="bold text-left">Description</ion-col>
+          <ion-col *ngIf="req_data.description!= 'undefined'">{{req_data.description}}</ion-col>
+      </ion-row> 
+      <ion-row>
+          <ion-col text-wrap class="bold text-left">Area</ion-col>
+          <ion-col *ngIf="req_data.area!= 'undefined'">{{req_data.area}}</ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col text-wrap class="bold text-left">Address</ion-col>
+          <ion-col *ngIf="req_data.address!= 'undefined'">{{req_data.address}}</ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col text-wrap class="bold text-left">Status</ion-col>
+          <ion-col>{{req_data.status ? "Active":"Inactive"}}</ion-col>
+      </ion-row>
+    </ion-grid>
+	</div>
+</ion-content>

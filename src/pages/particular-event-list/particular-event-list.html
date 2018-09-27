@@ -1,0 +1,83 @@
+<!--
+  Generated template for the ParticularEventListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>SR Event List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<div class="divBox2">
+      <div padding>
+          <button ion-button full color="primary" type="button" (click)="showNewEventRequest()">New SR Event</button>
+      </div>
+      <ion-row>
+        <ion-col class="bold text-center">
+            <ion-searchbar placeholder="Search" [(ngModel)]="searchName"></ion-searchbar>
+        </ion-col>
+      </ion-row>
+    <ion-grid class="grdLeaveHistory">
+        <ion-item>
+            <span text-wrap class="bold text-center">From Date</span>
+            <span ion-datepicker (ionChanged)="setDate($event);" [(value)]="selectedDate" [min]="date_Min" [max]="date_Max" clear class="ScheduleDate datePickerSpan">
+            <span>{{selectedDate | date: 'dd-MMM-yyyy'}} <ion-icon name="clipboard" item-left></ion-icon> </span>
+            </span>
+        </ion-item>
+        <ion-item>
+            <span text-wrap class="bold text-center">To Date</span>
+            <span ion-datepicker (ionChanged)="setDate1($event);" [(value)]="selectedDate1" [min]="date_Min" [max]="date_Max" clear class="ScheduleDate datePickerSpan">
+            <span>{{selectedDate1 | date: 'dd-MMM-yyyy'}} <ion-icon name="clipboard" item-left></ion-icon> </span>
+            </span>
+        </ion-item>
+      <ion-row>
+          <ion-col text-wrap class="bold text-center" col-2>
+            Sr.No
+          </ion-col>
+     <!-- <ion-col text-wrap class="bold text-center" col-2>
+            Code
+          </ion-col> -->
+          <ion-col text-wrap class="bold text-center" col-4>
+            Name
+          </ion-col>
+          <ion-col text-wrap class="bold text-center" col-3>
+            Date
+          </ion-col>
+          <ion-col text-wrap class="bold text-center" col-3>
+            Action
+          </ion-col> 
+      </ion-row>
+      <ion-row *ngFor="let cof of member_data | eventName: searchName | paginate:{ itemsPerPage:8, currentPage:p} ; let i = index">
+          <ion-col class="text-center" col-2>
+            {{i+1}}
+          </ion-col>
+     <!-- <ion-col class="text-center" col-2>
+            <ion-col class="text-center" [hidden]="cof.code == 'undefined'">
+              {{cof.code}}
+            </ion-col>
+          </ion-col> -->
+          <ion-col class="text-center" col-4>
+                 {{cof.name}}
+          </ion-col>
+          <ion-col class="text-center" col-3>
+                {{cof.event_date | date:'dd-MM-yyyy'}}
+          </ion-col>
+	        <ion-col class="text-center" col-3>  
+              <button ion-button icon-only outline small color="danger" class="del" (click)="presentConfirm(cof.id)" *ngIf="cof.event_status=='Pending'">
+                  <ion-icon name="trash"></ion-icon>
+              </button>  
+              <button ion-button icon-only outline small class="view" (click)="showModalDialog(cof)">
+                  <ion-icon name="eye"></ion-icon>
+              </button> 
+          </ion-col>
+		  </ion-row>
+            <pagination-controls (pageChange)="p =$event"></pagination-controls>
+    </ion-grid>
+  </div>
+</ion-content>

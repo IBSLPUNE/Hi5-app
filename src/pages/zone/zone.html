@@ -1,0 +1,81 @@
+<!--
+  Generated template for the ZonePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Zone</ion-title>
+      <ion-buttons end>
+            <button ion-button (click)="closeModal()">Close</button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<div class="divBox2">
+        <form (submit)="saveZoneRequest()"> 
+            <ion-item>
+                <ion-label>Company</ion-label>
+                <ion-select [(ngModel)]="company_type" name="Company" [compareWith]="compareFn" interface="popover" multiple="false">
+                   <ion-option *ngFor="let ctd of company_type_data" [value]="ctd">{{ctd.text}}</ion-option>
+                </ion-select>
+            </ion-item> 
+            <ion-item>
+                <ion-label>Zone</ion-label>
+                <ion-select [(ngModel)]="zone" name="Company" [compareWith]="compareFn" interface="popover" multiple="false">
+                   <ion-option *ngFor="let sdt of select_data_type" [value]="sdt">{{sdt.text}}</ion-option>
+                </ion-select>
+            </ion-item> 
+    	    <ion-item>
+                <ion-label >Zone Code</ion-label>
+                <ion-input [(ngModel)]="code" name="code" (ngModelChange)="textAreaEmpty()" placeholder="A101"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Name</ion-label>
+                <ion-textarea [(ngModel)]="name" name="name" type="text" placeholder="Truba"></ion-textarea>
+            </ion-item>
+            <ion-item>
+                <ion-label>County</ion-label>
+                <ion-select [(ngModel)]="county_type" name="County" [compareWith]="compareFn" interface="popover" (ionChange)="getStateType()" multiple="false">
+                    <ion-option *ngFor="let ctd of county_type_data" [value]="ctd">{{ctd.text}}</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>State</ion-label>
+                <ion-select [(ngModel)]="state_type" name="State" [compareWith]="compareFn" interface="popover" (ionChange)="getDistrictType()" multiple="false">
+                    <ion-option *ngFor="let std of state_type_data" [value]="std">{{std.text}}</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>District</ion-label>
+                <ion-select [(ngModel)]="district_type" name="District" [compareWith]="compareFn" interface="popover" multiple="false">
+                    <ion-option *ngFor="let dtd of district_type_data" [value]="dtd">{{dtd.text}}</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>Address</ion-label>
+                <ion-textarea [(ngModel)]="address" name="address" type="text" (ngModelChange)="textAreaEmpty()" placeholder="Address"></ion-textarea>
+            </ion-item>
+            <ion-item>
+                <ion-label>Contact No</ion-label>
+                <ion-input [(ngModel)]="contact_no" name="contact_no" type="tel" maxlength="10" (ngModelChange)="textAreaEmpty()" placeholder="9876543210"></ion-input>
+            </ion-item>  
+            <ion-item>
+                <ion-label>Email</ion-label>
+                <ion-input [(ngModel)]="email" name="email" type="email" (ngModelChange)="textAreaEmpty()" placeholder="truba@gmail.com"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Website</ion-label>
+                <ion-input [(ngModel)]="website" name="website" type="text" (ngModelChange)="textAreaEmpty()" placeholder="www.trubaindustries.com"></ion-input>
+            </ion-item>
+            <div padding>
+                <button ion-button full color="secondary" type="submit">Create Zone</button>
+            </div>
+    	</form> 
+    </div>
+</ion-content>

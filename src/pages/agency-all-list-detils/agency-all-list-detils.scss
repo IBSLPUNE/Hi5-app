@@ -1,0 +1,53 @@
+page-agency-all-list-detils {
+
+}
+.popover-md .popover-content {
+    width: 90%;
+}
+
+.clsPopup .popover-content {
+    top: 75px !important;
+    overflow: hidden !important;
+    //overflow: auto !important;
+    /*margin-top: 4%;
+    margin-left: -2%;*/
+} 
+
+.popover-content button, .popover-content ion-navbar, .popover-content .toolbar .toolbar-md {
+    font-size: 1rem;
+}
+
+.popover-content button, .popover-content .toolbar-title-md {
+    margin-bottom: 15px;
+}
+.popover-content .toolbar-title-md {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.popover-content .toolbar-background-md, .toolbar-ios ion-title, .toolbar-background-wp {
+    background-color: #BF360C;
+    height: 75%
+}
+
+.popover-content ion-content, .popover-content {
+    padding: 0;
+}
+
+ ion-app.md [padding] .scroll-content {
+    padding: 0px !important;
+  //  overflow-y: scroll !important;
+   // bottom-padding: 10px;
+       border-radius: 3px;
+  //  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    border-top: 3px solid #d2d6de;
+    background-color: #F5F5F5;
+    height: 100%;
+}
+ 
+
+.popover-content ion-content {
+    margin-top: 1%;
+	//s overflow-y: auto !important;
+}

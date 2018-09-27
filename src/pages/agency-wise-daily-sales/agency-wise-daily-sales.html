@@ -1,0 +1,129 @@
+<!--
+  Generated template for the AgencyWiseDailySalesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>New Daily Sales Report</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="closeModal()">Close</button>
+        </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<div class="divBox2">
+      <form (submit)="saveAgencyDailySalesRequest()"> 
+       <ion-item>
+                <ion-label>SR Name</ion-label>
+               <ion-select [(ngModel)]="agent_id" name="Agency" [compareWith]="compareFn" interface="popover" (ionChange)="getReportingWiseDateWiseSale()" multiple="false">
+                <ion-option *ngFor="let atd of member_type_data" [value]="atd">{{atd.text}}</ion-option>
+            </ion-select>
+      </ion-item> 
+      	<ion-item>
+                <ion-label>Sale Type</ion-label>
+                <ion-select [(ngModel)]="select_sale_type" name="SelectSalesType" [compareWith]="compareFn" interface="popover" (ionChange)="onLTChange()" multiple="false">
+                <ion-option *ngFor="let sstd of select_sale_type_data" [value]="sstd">{{sstd.text}}</ion-option>
+                </ion-select>
+        </ion-item>
+      	<ion-item>
+           <ion-label>Distributor</ion-label>
+            <ion-select [(ngModel)]="distributor_type" name="Distributor" [compareWith]="compareFn" interface="popover" (ionChange)="getRootType()" multiple="false">
+                <ion-option *ngFor="let dtd of distributor_type_data" [value]="dtd">{{dtd.text}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Street Root</ion-label>
+            <ion-select [(ngModel)]="street_root" name="Street-Root" [compareWith]="compareFn" interface="popover" (ionChange)="getSubDistributorType()" multiple="false">
+                <ion-option *ngFor="let srd of street_root_data" [value]="srd">{{srd.text}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Retailer</ion-label>
+            <ion-select [(ngModel)]="sub_distributor_type" name="Sub-Distributor" [compareWith]="compareFn" interface="popover" multiple="false">
+                <ion-option *ngFor="let std of sub_distributor_type_data" [value]="std">{{std.text}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Product</ion-label>
+            <ion-select [(ngModel)]="product_type" name="Product" [compareWith]="compareFn" interface="popover" (ionChange)="getSchemeType()" multiple="false">
+                <ion-option *ngFor="let ptd of product_type_data" [value]="ptd">{{ptd.text}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Scheme</ion-label>
+            <ion-select [(ngModel)]="scheme_type" name="Scheme" [compareWith]="compareFn" interface="popover" multiple="false">
+                <ion-option *ngFor="let sctd of scheme_type_data" [value]="sctd">{{sctd.text}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <!-- <ion-item>
+                <ion-label>Name</ion-label>
+                <ion-textarea [(ngModel)]="Name" name="Name" type="text" placeholder="Name"></ion-textarea>
+        </ion-item>
+        <ion-item>
+                <ion-label>Area</ion-label>
+                <ion-input [(ngModel)]="Area" name="Area" type="text" placeholder="Area"></ion-input>
+        </ion-item>
+        <ion-item>
+                <ion-label>Description</ion-label>
+                <ion-input [(ngModel)]="Description" name="Description" type="text" placeholder="Description"></ion-input>
+        </ion-item>
+        <ion-item>
+                <ion-label>Address</ion-label>
+                <ion-input [(ngModel)]="Address" name="Address" type="text" placeholder="Address"></ion-input>
+        </ion-item> -->
+        <ion-item [hidden]="lTType">
+                <ion-label>Primary Sale</ion-label>
+                <ion-input [(ngModel)]="PrimarySell" name="PrimarySell" type="tel" (ngModelChange)="textAreaEmpty()" placeholder="e.g:200"></ion-input>
+        </ion-item>
+        <ion-item [hidden]="!lTType">
+                <ion-label>Secondary Sale</ion-label>
+                <ion-input [(ngModel)]="SecondarySell" name="SecondarySell" type="tel" (ngModelChange)="textAreaEmpty()" placeholder="e.g:100"></ion-input>
+        </ion-item>
+         <ion-item>
+                <ion-label>Description</ion-label>
+                <ion-textarea [(ngModel)]="Description" name="Description" type="text" (ngModelChange)="textAreaEmpty()" placeholder="Description"></ion-textarea>
+        </ion-item>
+        <div padding>
+                <button ion-button full color="secondary" type="submit">Create Daily Sales Report</button>
+        </div>
+      </form>
+      <ion-grid class="grdLeaveHistory">
+       
+            <ion-row>
+                <ion-col text-wrap class="bold text-center" col-4>
+                   Sr.No
+                </ion-col>
+                <ion-col text-wrap class="bold text-center" col-4>
+                   Retailer
+                </ion-col>
+                 <ion-col text-wrap class="bold text-center" col-4>
+                   Action
+                </ion-col> 
+            </ion-row>
+            <ion-row *ngFor="let sdd of sale_data | paginate:{ itemsPerPage:4, currentPage:p} ; let i = index">
+               <ion-col class="text-center" col-4>
+                  {{i+1}}
+              </ion-col>
+          <ion-col class="text-center" col-4>
+
+                {{sdd.sub_distributor_id}}
+              </ion-col>
+  
+              <ion-col class="text-center" col-4>
+                     <button ion-button icon-only outline small class="view" (click)="showModalDialog(sdd)">
+                        <ion-icon name="md-add"></ion-icon>
+                </button> 
+                    
+              </ion-col>
+      </ion-row>
+           <pagination-controls (pageChange)="p =$event"></pagination-controls>
+    </ion-grid>  
+    </div>
+
+</ion-content>
