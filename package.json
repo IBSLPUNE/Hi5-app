@@ -26,7 +26,8 @@
     "@ionic-native/file-transfer": "^4.7.0",
     "@ionic-native/geolocation": "^4.10.0",
     "@ionic-native/in-app-browser": "^4.7.0",
-    "@ionic-native/native-geocoder": "^4.11.0",
+    "@ionic-native/location-accuracy": "^4.15.0",
+    "@ionic-native/native-geocoder": "^4.15.0",
     "@ionic-native/network": "^4.11.0",
     "@ionic-native/splash-screen": "4.4.0",
     "@ionic-native/status-bar": "4.4.0",
@@ -36,6 +37,8 @@
     "angular2-moment": "^1.8.0",
     "cordova-android": "6.3.0",
     "cordova-browser": "5.0.3",
+    "cordova-ios": "4.5.5",
+    "cordova-plugin-add-swift-support": "^1.7.1",
     "cordova-plugin-compat": "^1.2.0",
     "cordova-plugin-device": "^2.0.1",
     "cordova-plugin-file": "^4.3.3",
@@ -92,7 +95,8 @@
     },
     "platforms": [
       "browser",
-      "android"
+      "android",
+      "ios"
     ]
   }
 }

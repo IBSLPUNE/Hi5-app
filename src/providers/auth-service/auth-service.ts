@@ -16,9 +16,11 @@ export class AuthServiceProvider {
       // public serverIP ='http://192.168.42.134:3000';  // sir local
      //  public serverIP ='http://192.168.15.205:3002';  // local
       // public serverIP ='http://192.168.19.176:3000'; //vishal
-      //   public serverIP ='http://13.229.157.255'; live
+         public serverIP ='http://13.229.157.255'; live
       // public serverIP ='http://192.168.22.88:3002'; //tanuja
-         public serverIP ='http://192.168.14.135:3000'; //santosh
+      // public serverIP ='http://192.168.14.135:3000'; //santosh
+       // public serverIP ='http://192.168.225.35:3000'; //santosh
+
     
 // public apiUrl_user_auths = this.serverIP + '/api/community_apis/';   //api server
    public apiUrl_user_auths = this.serverIP + '/api/contact_library_apis/';   //api server

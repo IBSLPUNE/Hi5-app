@@ -18,9 +18,18 @@
     <ion-grid class="text-left">
 	  <!-- <h3>Current Latitude: {{locationTracker.lat}}</h3>
     <h3>Current Longitude: {{locationTracker.lng}}</h3> -->
-    <!--  <h3>Current Place: {{locationTracker.addr}}</h3>  -->
-     <button ion-button full primary (click)="locationData()">Punch</button>
-    <!--  <button ion-button full primary (click)="stop()">Stop Tracking</button> -->
+       <span class="text-center">Current Place:</span>
+      <span>{{locationTracker.addr}}</span>
+     <ion-row>
+        <ion-col>  
+         <button ion-button full primary (click)="locationData()">Punch</button>
+        </ion-col>
+        <ion-col col-2> 
+          <button ion-button icon-only class="refresh" (click)="isLocationAvailable()">
+            <ion-icon name="md-refresh"></ion-icon>
+          </button>
+        </ion-col> 
+      </ion-row>
      </ion-grid>
    
       <ion-list>

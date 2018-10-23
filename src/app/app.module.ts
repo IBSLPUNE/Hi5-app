@@ -83,6 +83,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { ConnectivityServiceProvider } from '../providers/connectivity-service/connectivity-service';
 import { Network } from '@ionic-native/network';
 import { NativeGeocoder } from '@ionic-native/native-geocoder';
+import { LocationAccuracy } from '@ionic-native/location-accuracy';
 
 
 @NgModule({
@@ -232,6 +233,7 @@ import { NativeGeocoder } from '@ionic-native/native-geocoder';
     ConnectivityServiceProvider,
     Network,
     NativeGeocoder,
+    LocationAccuracy
   ]
 })
 export class AppModule {}
