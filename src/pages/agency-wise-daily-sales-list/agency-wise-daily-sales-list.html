@@ -38,7 +38,7 @@
           </ion-item>
           <ion-item>
             <ion-label>SR Name</ion-label>
-             <ion-select [(ngModel)]="member_type" name="Agency" [compareWith]="compareFn" interface="popover" (ionChange)="getAgencyDailySalesList()" multiple="false">
+             <ion-select [(ngModel)]="member_type" name="Agency" [compareWith]="compareFn" interface="popover" (ionChange)="getDailySalesList()" multiple="false">
              <ion-option *ngFor="let atd of member_type_data" [value]="atd">{{atd.text}}</ion-option>
              </ion-select>
           </ion-item>
@@ -67,7 +67,7 @@
                       {{dsd.distributor_id}}
                 </ion-col>
                 <ion-col class="text-center" col-3>  
-                    <button ion-button icon-only outline small class="view" (click)="showModalDialog(dsd)">
+                    <button ion-button icon-only outline small class="view" (click)="showModalDialog(dsd)" *ngIf="dsd.sale_completed==null">
                         <ion-icon name="eye"></ion-icon>
                     </button>
                 </ion-col>

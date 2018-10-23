@@ -110,7 +110,5 @@ export class AgentAttendanceListPage {
             
         });
         AttendanceDetailsPage.present();
-    
-}
-
+    }
 }

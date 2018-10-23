@@ -24,7 +24,7 @@
           </ion-col>
         </ion-row>
         <ion-grid class="grdLeaveHistory">
-             <ion-item>
+          <ion-item>
             <span>From Date</span>
             <span ion-datepicker (ionChanged)="setDate($event);" [(value)]="selectedDate" [min]="date_Min" [max]="date_Max" clear class="ScheduleDate datePickerSpan">
             <span>{{selectedDate | date: 'dd-MMM-yyyy'}} <ion-icon name="clipboard" item-left></ion-icon> </span>
@@ -71,9 +71,8 @@
                         <ion-icon name="eye"></ion-icon>
                     </button>
                 </ion-col>
-		    </ion-row>
-            <pagination-controls (pageChange)="p =$event"></pagination-controls>
-        </ion-grid>
-    </div>
-
+		        </ion-row>
+             <pagination-controls (pageChange)="p =$event"></pagination-controls>
+         </ion-grid>
+  </div>
 </ion-content>

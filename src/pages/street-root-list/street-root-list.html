@@ -49,7 +49,7 @@
                    {{rd.street_root}}
                 </ion-col>
 	            <ion-col class="text-center" col-3> 
-                    <button ion-button icon-only outline small color="danger" class="del" (click)="presentConfirm(rd.id)">
+                    <button ion-button icon-only outline small color="danger" class="del" (click)="presentConfirm(rd.id)" *ngIf="rd.sub_distributor==false">
                         <ion-icon name="trash"></ion-icon>
                     </button>   
                     <button ion-button icon-only outline small class="view" (click)="showModalDialog(rd)">

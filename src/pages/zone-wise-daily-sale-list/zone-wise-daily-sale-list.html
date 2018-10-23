@@ -5,17 +5,13 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <ion-title>Daily Productive Call Report</ion-title>
      <ion-buttons end>
             <button ion-button (click)="closeModal()">Close</button>
      </ion-buttons>
   </ion-navbar>
-
 </ion-header>
-
-
 <ion-content padding>
 	<div class="divBox2">
 		<ion-grid class="grdLeaveHistory">
@@ -47,7 +43,7 @@
               <button ion-button icon-only outline small class="view" (click)="showModalDialog(dsd)">
                   <ion-icon name="eye"></ion-icon>
               </button> 
-              <button ion-button icon-only outline small color="danger" class="del" (click)="presentConfirm(dsd.id)">
+              <button ion-button icon-only outline small color="danger" class="del" (click)="presentConfirm(dsd.id)" *ngIf="dsd.sale_completed==null">
                    <ion-icon name="trash"></ion-icon>
               </button>   
           </ion-col>
@@ -55,5 +51,4 @@
            <pagination-controls (pageChange)="p =$event"></pagination-controls>
     </ion-grid>
   </div>
-
 </ion-content>

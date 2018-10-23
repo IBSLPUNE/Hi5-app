@@ -13,7 +13,8 @@ import { ProductListPage } from '../product-list/product-list';
 import { AllAttendanceListPage } from '../all-attendance-list/all-attendance-list';
 import { StreetRootListPage } from '../street-root-list/street-root-list';
 import { SchemeListPage } from '../scheme-list/scheme-list';
-
+import { AdminDailySalesListPage } from '../admin-daily-sales-list/admin-daily-sales-list';
+import { ResetPasswordListPage } from '../reset-password-list/reset-password-list';
 
 /**
  * Generated class for the AdminMenuPage page.
@@ -75,6 +76,12 @@ export class AdminMenuPage {
         }
         if (clickedOn == 'Scheme') {
             this.navCtrl.push(SchemeListPage);
+        }
+        if (clickedOn == 'AgencySalesList') {
+            this.navCtrl.push(AdminDailySalesListPage);
+        }
+        if (clickedOn == 'ResetPassword') {
+            this.navCtrl.push(ResetPasswordListPage);
         }
         }
          presentToast(msg) {

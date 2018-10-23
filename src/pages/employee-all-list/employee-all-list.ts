@@ -37,14 +37,13 @@ export class EmployeeAllListPage {
             this.presentToast(errJson.message);
         });
     }
- showLoader() {
+    showLoader() {
         this.loading = this.loadingCtrl.create({
             content: 'Loading...'
         });
 
         this.loading.present();
     }
-
     presentToast(msg) {
         let toast = this.toastCtrl.create({
             message: msg,
@@ -58,7 +57,6 @@ export class EmployeeAllListPage {
         });
         toast.present();
     }
-
    showModalDialog(req_data) {
           var data = {
             id: req_data.id,

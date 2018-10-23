@@ -109,6 +109,7 @@ export class LocationTrackerProvider {
         var latlng = { lat: this.lat, lng: this.lng };
         var request = { 'location': latlng };
         this.geocoder.geocode(request, (results, status) => {
+         console.log(results);
             this.zone.run(() => {
                 if (status === 'OK') {
                     if (results[0]) {

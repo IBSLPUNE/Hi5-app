@@ -58,6 +58,8 @@ import { SchemeDetailPage } from '../pages/scheme-detail/scheme-detail';
 import { AgentAttendanceListPage } from '../pages/agent-attendance-list/agent-attendance-list';
 import { AgentAttendanceDetailPage } from '../pages/agent-attendance-detail/agent-attendance-detail';
 import { AdminAllEventListPage } from '../pages/admin-all-event-list/admin-all-event-list';
+import { AdminDailySalesListPage } from '../pages/admin-daily-sales-list/admin-daily-sales-list';
+import { ResetPasswordListPage } from '../pages/reset-password-list/reset-password-list';
 
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { DatePickerModule } from 'ion-datepicker';
@@ -83,6 +85,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { ConnectivityServiceProvider } from '../providers/connectivity-service/connectivity-service';
 import { Network } from '@ionic-native/network';
 import { NativeGeocoder } from '@ionic-native/native-geocoder';
+import { LocationAccuracy } from '@ionic-native/location-accuracy';
 
 
 @NgModule({
@@ -147,7 +150,9 @@ import { NativeGeocoder } from '@ionic-native/native-geocoder';
     AgentAttendanceListPage,
     AgentAttendanceDetailPage,
     EmpAttendancePipe,
-    AdminAllEventListPage
+    AdminAllEventListPage,
+    AdminDailySalesListPage,
+    ResetPasswordListPage
   
   ],
   imports: [
@@ -214,7 +219,9 @@ import { NativeGeocoder } from '@ionic-native/native-geocoder';
     AdminAgentDetailPage,
     AgentAttendanceListPage,
     AgentAttendanceDetailPage,
-    AdminAllEventListPage
+    AdminAllEventListPage,
+    AdminDailySalesListPage,
+    ResetPasswordListPage
   ],
   providers: [
     StatusBar,
@@ -232,6 +239,7 @@ import { NativeGeocoder } from '@ionic-native/native-geocoder';
     ConnectivityServiceProvider,
     Network,
     NativeGeocoder,
+    LocationAccuracy
   ]
 })
 export class AppModule {}

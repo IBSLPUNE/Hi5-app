@@ -116,16 +116,31 @@ export class AttendanceAgencyListPage {
         var data = {
             id: req_data.id,
             first_name: req_data.first_name,
+            middle_name: req_data.middle_name,
             last_name: req_data.last_name,
-            longitude: req_data.longitude,
-            latitude: req_data.latitude,
-            place: req_data.place,
             date: req_data.date,
-            time: req_data.time
+            in_time: req_data.in_time,
+            out_time: req_data.out_time,
+            working_hrs: req_data.working_hrs,
+            present: req_data.present,
+            comment: req_data.comment
+
         };
         var DetailsmodalPage = this.popoverCtrl.create(AllAttendanceDetailPage, data, { cssClass: 'clsPopup' });
         DetailsmodalPage.present();
          
     }
-
+     showInOutDetails(eld){
+       var data = { 
+       id: eld.id,
+       date: eld.date,
+       agent_id: eld.agent_id
+      }
+      var AttendanceDetailsPage = this.popoverCtrl.create('AllAttendanceInOutDetailPage', data, { cssClass: 'clsPopup' });
+       AttendanceDetailsPage.onDidDismiss(() => {
+            
+        });
+        AttendanceDetailsPage.present();
+    }
 }
+

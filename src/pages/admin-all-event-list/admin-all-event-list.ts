@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController, ViewController, PopoverController, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController, ViewController, PopoverController } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 /**
  * Generated class for the AdminAllEventListPage page.
@@ -35,7 +35,7 @@ export class AdminAllEventListPage {
 			event_status: '',
 			agent_id: ''
 			};
-    constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthServiceProvider, public loadingCtrl: LoadingController, private toastCtrl: ToastController, public alertCtrl: AlertController, public viewCtrl: ViewController, public popoverCtrl: PopoverController, private modalCtrl: ModalController) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthServiceProvider, public loadingCtrl: LoadingController, private toastCtrl: ToastController, public alertCtrl: AlertController, public viewCtrl: ViewController, public popoverCtrl: PopoverController) {
     }
     ionViewDidLoad() {
 		this.req_data.id = this.navParams.get('id');

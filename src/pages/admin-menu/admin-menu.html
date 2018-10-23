@@ -5,14 +5,10 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <ion-title>Admin Menu</ion-title>
   </ion-navbar>
-
 </ion-header>
-
-
 <ion-content padding>
 	 <div class="divBox2" style="height: 100%;">
         <ion-grid class="text-center">
@@ -172,9 +168,31 @@
                       </div>
                   </div>
                 </ion-col>
-              
-               
-            </ion-row>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                    <div class="clsCursorPointer" (click)="gotoAnotherPage('AgencySalesList')">
+                        <div>
+                            <img src='assets/imgs/sales.png' alt='Sales' width="40" height="40"/>
+                        </div>
+                        <div>
+                            <strong>Daily Sales</strong>
+                        </div>
+                    </div>
+                </ion-col>
+                <ion-col>
+                   <div class="clsCursorPointer" (click)="gotoAnotherPage('ResetPassword')">
+                        <div>
+                            <img src='assets/imgs/lock.png' alt='Sales' width="40" height="40"/>
+                        </div>
+                        <div>
+                            <strong>Reset Password</strong>
+                        </div>
+                    </div>
+                </ion-col>
+                <ion-col>
+                </ion-col>
+              </ion-row>
         </ion-grid>
     </div>
 </ion-content>

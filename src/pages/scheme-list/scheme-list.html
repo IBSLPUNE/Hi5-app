@@ -49,7 +49,7 @@
             {{pd.from_date | date:'dd-MM-yyyy'}}<br /> to <br /> {{pd.to_date | date:'dd-MM-yyyy'}}
           </ion-col>
 	        <ion-col class="text-center" col-2> 
-            <button ion-button icon-only outline small color="danger" class="del" (click)="presentConfirm(pd.id)">
+            <button ion-button icon-only outline small color="danger" class="del" (click)="presentConfirm(pd.id)" *ngIf="pd.scheme==false">
               <ion-icon name="trash"></ion-icon>
             </button>
             <button ion-button icon-only outline small class="view" (click)="showModalDialog(pd)">

@@ -86,7 +86,8 @@ export class DailySalesListPage {
     }
     showModalDialog(dsd){
       var data = {id:dsd.id,
-                 date:dsd.date
+                  agent_id:dsd.agent_id,
+                  date:dsd.date
                 }
 
       var EventRequestPagemodalPage = this.modalCtrl.create('DailySaleDatewiseListPage', data);

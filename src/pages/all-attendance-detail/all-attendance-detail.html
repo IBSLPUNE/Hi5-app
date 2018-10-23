@@ -21,19 +21,31 @@
     <ion-grid class="grdLeaveHistory">
       <ion-row>
          <ion-col class="bold">Name</ion-col>
-         <ion-col>{{eld.first_name}} {{eld.last_name}}</ion-col>
+         <ion-col>{{eld.first_name}} {{eld.middle_name}} {{eld.last_name}}</ion-col>
       </ion-row>
       <ion-row>
          <ion-col class="bold">Date</ion-col>
          <ion-col text-wrap>{{eld.date | date:'dd-MM-yyyy'}}</ion-col>
       </ion-row>
       <ion-row>
-         <ion-col class="bold">Time</ion-col>
-         <ion-col text-wrap>{{eld.time}}</ion-col>
+         <ion-col class="bold">In Time</ion-col>
+         <ion-col text-wrap>{{eld.in_time}}</ion-col>
       </ion-row>
       <ion-row>
-         <ion-col class="bold">Place</ion-col>
-         <ion-col>{{eld.place}} </ion-col>
+         <ion-col class="bold">Out Time</ion-col>
+         <ion-col text-wrap>{{eld.out_time}}</ion-col>
+      </ion-row>
+      <ion-row>
+         <ion-col class="bold">Working Hours</ion-col>
+         <ion-col>{{eld.working_hrs}} </ion-col>
+       </ion-row>
+        <ion-row>
+         <ion-col class="bold">Present</ion-col>
+         <ion-col>{{eld.present}} </ion-col>
+       </ion-row>
+        <ion-row>
+         <ion-col class="bold">Comment</ion-col>
+         <ion-col>{{eld.comment}} </ion-col>
        </ion-row>
     </ion-grid> 
   </div>

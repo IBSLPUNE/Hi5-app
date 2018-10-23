@@ -18,6 +18,7 @@ export class DailySalesDetailsPage {
   sub_distributor_type: any;
   
    current_date: any;
+   agent_id: any;
 
 
     loading: any;
@@ -35,6 +36,7 @@ export class DailySalesDetailsPage {
   
     this.sub_distributor_type = this.navParams.get('sub_distributor');
     this.current_date = this.navParams.get('date');
+    this.agent_id = this.navParams.get('agent_id');
 		this.getProductWiseList();
 		
         console.log('ionViewDidLoad DailySalesDetailsPage');
@@ -45,7 +47,7 @@ export class DailySalesDetailsPage {
 	}
 	 getProductWiseList(){
         this.showLoader();
-            this.authService.getProductWiseList(localStorage.getItem('agent_id'),this.sub_distributor_type,this.current_date).then((result) => {
+            this.authService.getProductWiseList(this.agent_id,this.sub_distributor_type,this.current_date).then((result) => {
             this.loading.dismiss();
             this.root_wise_data = result;
               this.getProductTotalPrice();
@@ -57,7 +59,7 @@ export class DailySalesDetailsPage {
     }
      getProductTotalPrice(){
         this.showLoader();
-            this.authService.getProductTotalPrice(localStorage.getItem('agent_id'),this.sub_distributor_type,this.current_date).then((result) => {
+            this.authService.getProductTotalPrice(this.agent_id,this.sub_distributor_type,this.current_date).then((result) => {
             this.loading.dismiss();
             this.daily_sales_data = result;
             this.total_quantity = this.daily_sales_data.total_quantity;

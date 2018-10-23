@@ -16,10 +16,11 @@ export class AuthServiceProvider {
       // public serverIP ='http://192.168.42.134:3000';  // sir local
      //  public serverIP ='http://192.168.15.205:3002';  // local
       // public serverIP ='http://192.168.19.176:3000'; //vishal
-      //   public serverIP ='http://13.229.157.255'; live
-      // public serverIP ='http://192.168.22.88:3002'; //tanuja
-         public serverIP ='http://192.168.14.135:3000'; //santosh
-    
+      // public serverIP ='http://13.229.157.255'; live
+         public serverIP ='http://192.168.5.189:3003'; //santosh
+     //  public serverIP ='http://192.168.13.245:3002'; //tanuja
+      // public serverIP ='http://192.168.13.244:3000'; //subham
+
 // public apiUrl_user_auths = this.serverIP + '/api/community_apis/';   //api server
    public apiUrl_user_auths = this.serverIP + '/api/contact_library_apis/';   //api server
 
@@ -1305,4 +1306,24 @@ export class AuthServiceProvider {
                 });
         });
     }
+    getAllInouttimeAttendaceData(agent_id, date) {
+        return new Promise((resolve, reject) => {
+            this.http.get(this.apiUrl_user_auths + 'all_emp_wise_inout_attendance?agent_id=' + agent_id + '&date=' + date)
+                .subscribe(res => {
+                    resolve(res.json());
+                }, (err) => {
+                    reject(err);
+                });
+        });
+    }
+    getResetPassword(id) {
+        return new Promise((resolve, reject) => {
+            this.http.get(this.apiUrl_user_auths + 'reset_password?agent_id=' + id)
+                .subscribe(res => {
+                    resolve(res.json());
+                }, (err) => {
+                    reject(err);
+                });
+        });
+    } 
 }

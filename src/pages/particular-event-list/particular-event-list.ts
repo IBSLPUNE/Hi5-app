@@ -21,7 +21,7 @@ import moment from 'moment';
 export class ParticularEventListPage {
 
   loading: any;
- member_data: any;
+  member_data: any;
   date_Max1: any;
     //selectedDate1: String;
     date_Min: Date = new Date();

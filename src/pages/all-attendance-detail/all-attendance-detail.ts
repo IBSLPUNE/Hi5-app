@@ -17,12 +17,14 @@ export class AllAttendanceDetailPage {
 
    eld = {id: '',
       first_name: '',
+      middle_name: '',
       last_name: '',
-      longitude: '',
-      latitude: '',
-      place: '',
       date: '',
-      time: ''
+      in_time: '',
+      out_time: '',
+      working_hrs: '',
+      present: '',
+      comment: ''
      };
 
 
@@ -35,14 +37,14 @@ export class AllAttendanceDetailPage {
   ionViewDidLoad() {
     this.eld.id = this.navParams.get('id');
     this.eld.first_name = this.navParams.get('first_name');
+    this.eld.middle_name = this.navParams.get('middle_name');
     this.eld.last_name = this.navParams.get('last_name');
-    this.eld.longitude = this.navParams.get('longitude');
-    this.eld.latitude = this.navParams.get('latitude');
-    this.eld.place = this.navParams.get('place');
     this.eld.date = this.navParams.get('date');
-    this.eld.time = this.navParams.get('time');
-   
-   
+    this.eld.in_time = this.navParams.get('in_time');
+    this.eld.out_time = this.navParams.get('out_time');
+    this.eld.working_hrs = this.navParams.get('working_hrs');
+    this.eld.present = this.navParams.get('present');
+    this.eld.comment = this.navParams.get('comment'); 
   }
  
   public closeModal(){

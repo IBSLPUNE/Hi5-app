@@ -50,7 +50,7 @@
                   {{cof.distributor_type}}
               </ion-col>
               <ion-col class="text-center" col-3> 
-                <button ion-button icon-only outline small color="danger" class="del" (click)="presentConfirm(cof.id)">
+                <button ion-button icon-only outline small color="danger" class="del" (click)="presentConfirm(cof.id)" *ngIf="cof.distributor==false">
                         <ion-icon name="trash"></ion-icon>
                 </button>   
  

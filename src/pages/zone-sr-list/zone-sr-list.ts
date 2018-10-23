@@ -23,7 +23,6 @@ export class ZoneSrListPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthServiceProvider, public loadingCtrl: LoadingController, private toastCtrl: ToastController, public alertCtrl: AlertController, public popoverCtrl: PopoverController, private modalCtrl: ModalController) {
     this.getmemberdetails();
   }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad ZoneSrListPage');
   }
@@ -38,14 +37,13 @@ export class ZoneSrListPage {
             this.presentToast(errJson.message);
         });
     }
- showLoader() {
+    showLoader() {
         this.loading = this.loadingCtrl.create({
             content: 'Loading...'
         });
 
         this.loading.present();
     }
-
     presentToast(msg) {
         let toast = this.toastCtrl.create({
             message: msg,
@@ -59,8 +57,7 @@ export class ZoneSrListPage {
         });
         toast.present();
     }
-
-   showModalDialog(req_data) {
+    showModalDialog(req_data) {
           var data = {
             id: req_data.id,
             code: req_data.code,
@@ -109,7 +106,7 @@ export class ZoneSrListPage {
             this.presentToast(errJson.message);
         });
     }
-      presentConfirm(agent_req_id) {
+    presentConfirm(agent_req_id) {
         const alert = this.alertCtrl.create({
             title: 'Confirmation',
             message: 'Are you sure?',
@@ -132,5 +129,4 @@ export class ZoneSrListPage {
         });
         alert.present();
     }
-
 }

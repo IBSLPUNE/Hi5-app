@@ -19,10 +19,12 @@ export class DailySaleDatewiseListPage {
   loading: any;
   dailyId: any;
   dailydate: any;
+  agent_id: any;
   daily_sales_data: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthServiceProvider, public loadingCtrl: LoadingController, private toastCtrl: ToastController, public alertCtrl: AlertController, public popoverCtrl: PopoverController, public viewCtrl : ViewController) {
    this.dailyId = this.navParams.get('id');
+   this.agent_id = this.navParams.get('agent_id');
    this.dailydate = this.navParams.get('date');
    this.getDateWiseSale();
   }
@@ -32,7 +34,7 @@ export class DailySaleDatewiseListPage {
   }
   getDateWiseSale(){
     this.showLoader();
-            this.authService.getDateWiseSale(localStorage.getItem('agent_id'),this.dailydate).then((result) => {
+            this.authService.getDateWiseSale(this.agent_id,this.dailydate).then((result) => {
             this.loading.dismiss();
             this.daily_sales_data = result;
            
@@ -81,7 +83,8 @@ export class DailySaleDatewiseListPage {
        var data = {
               id: req_data.id,
               sub_distributor: req_data.sub_distributor,
-              date: req_data.date
+              date: req_data.date,
+              agent_id: req_data.agent_id
          };
        
         var DetailsmodalPage = this.popoverCtrl.create(DailySalesDetailsPage, data, { cssClass: 'clsPopup' });

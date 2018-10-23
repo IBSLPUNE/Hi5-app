@@ -56,7 +56,7 @@
                     <button ion-button icon-only outline small class="view" (click)="showModalDialog(dsd)">
                         <ion-icon name="eye"></ion-icon>
                     </button> 
-                    <button ion-button icon-only outline small color="danger" class="del" (click)="presentConfirm(dsd.id)">
+                    <button ion-button icon-only outline small color="danger" class="del" (click)="presentConfirm(dsd.id)" *ngIf="dsd.sale_completed==null">
                         <ion-icon name="trash"></ion-icon>
                     </button>   
                 </ion-col>

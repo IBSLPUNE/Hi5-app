@@ -77,7 +77,7 @@
             <button ion-button icon-only outline small class="view" (click)="showModalDialog(cof)">
                 <ion-icon name="eye"></ion-icon>
             </button> 
-            <button ion-button icon-only outline small color="danger" class="del" (click)="presentConfirm(cof.id)" *ngIf="cof.event_status=='Pending'">
+            <button ion-button icon-only outline small color="danger" class="del" (click)="presentConfirm(cof.id)" *ngIf="cof.event_detail==false">
                 <ion-icon name="trash"></ion-icon>
             </button>  
     <!--   <button ion-button icon-only outline small class="view" (click)="showModal(cof)" [hidden]="cof.event_status != Completed">

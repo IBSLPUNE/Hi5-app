@@ -63,7 +63,6 @@ export class ZoneWiseDailySaleListPage {
 
         this.loading.present();
     }
-
     presentToast(msg) {
         let toast = this.toastCtrl.create({
             message: msg,
@@ -79,7 +78,7 @@ export class ZoneWiseDailySaleListPage {
     }
     public closeModal(){
 		this.viewCtrl.dismiss();
-	}
+	  }
     showModalDialog(req_data) {
       var data = {
               id: req_data.id,
@@ -87,12 +86,10 @@ export class ZoneWiseDailySaleListPage {
               date: req_data.date,
               agent_id: req_data.agent_id
          };
-       
-    
         var DetailsmodalPage = this.popoverCtrl.create(AgencyWiseDailySalesDatailPage, data, { cssClass: 'clsPopup' });
         DetailsmodalPage.present();
     }
-     cancelDailySaleRequest(daily_sale_id) {
+    cancelDailySaleRequest(daily_sale_id) {
        // this.showLoader();
         this.authService.cancelDailySaleRequest(daily_sale_id).then((result) => {
             //this.loading.dismiss();
@@ -104,7 +101,7 @@ export class ZoneWiseDailySaleListPage {
             this.presentToast(errJson.message);
         });
     }
-     presentConfirm(daily_sale_id) {
+    presentConfirm(daily_sale_id) {
         const alert = this.alertCtrl.create({
             title: 'Confirmation',
             message: 'Are you sure?',
@@ -127,5 +124,4 @@ export class ZoneWiseDailySaleListPage {
         });
         alert.present();
     }
-
 }

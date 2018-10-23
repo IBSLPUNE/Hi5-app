@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController, PopoverController } from 'ionic-angular';
 import { LocationTrackerProvider } from '../../providers/location-tracker/location-tracker';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { LocationAccuracy } from '@ionic-native/location-accuracy';
 import moment from 'moment';
 /**
  * Generated class for the LocationPage page.
@@ -19,9 +20,10 @@ export class LocationPage {
     loading: any;
     employee_plan_list_data: any;
     selectedDate: any;
+    map: any;
 
   attendancedata = { agent_id: '', date: '', in_time: '', lat: 0, lng: 0, place: '' };
-  constructor(public navCtrl: NavController, public navParams: NavParams, public locationTracker: LocationTrackerProvider, public loadingCtrl: LoadingController, private authService: AuthServiceProvider, private toastCtrl: ToastController, public alertCtrl: AlertController, public popoverCtrl: PopoverController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public locationTracker: LocationTrackerProvider, public loadingCtrl: LoadingController, private authService: AuthServiceProvider, private toastCtrl: ToastController, public alertCtrl: AlertController, public popoverCtrl: PopoverController, private locationAccuracy: LocationAccuracy) {
   this.getAttendaceData();
   }
 
@@ -42,7 +44,7 @@ export class LocationPage {
         });
     }
   locationData(){
-        if (this.locationTracker.lat == 0) {
+        if (this.locationTracker.addr == undefined) {
           this.showAlert('Message', 'Unable to find GPS location Please check your GPS settings');
             return;
         }
@@ -107,6 +109,33 @@ export class LocationPage {
   stop(){
     this.locationTracker.stopTracking();
   }
+    isLocationAvailable(){
+
+    if (this.locationTracker.addr == undefined) {
+         this.locationAccuracy.canRequest().then((canRequest: boolean) => {
+
+         if(canRequest) {
+
+          this.locationAccuracy.request(this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY).then(
+           
+          // error => alert('Error requesting location permissions'+JSON.stringify(error))
+           );
+           }
+
+        });
+       this.showAlert1('Message', 'Refreshing.....');
+       window.location.reload();
+    }
+  }
+  showAlert1(title, text) {
+        //this.loading.dismiss();
+
+        let alert = this.alertCtrl.create({
+            title: title,
+            subTitle: text
+        });
+        alert.present(prompt);
+    }
    
 
 }
