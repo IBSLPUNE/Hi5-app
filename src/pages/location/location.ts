@@ -4,6 +4,7 @@ import { LocationTrackerProvider } from '../../providers/location-tracker/locati
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { LocationAccuracy } from '@ionic-native/location-accuracy';
 import moment from 'moment';
+import { LocationAccuracy } from '@ionic-native/location-accuracy';
 /**
  * Generated class for the LocationPage page.
  *
@@ -106,9 +107,25 @@ export class LocationPage {
     }
 
     
-  stop(){
-    this.locationTracker.stopTracking();
+   isLocationAvailable(){
+
+    if (this.locationTracker.addr == undefined) {
+         this.locationAccuracy.canRequest().then((canRequest: boolean) => {
+
+         if(canRequest) {
+
+          this.locationAccuracy.request(this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY).then(
+           
+          // error => alert('Error requesting location permissions'+JSON.stringify(error))
+           );
+           }
+
+        });
+       this.showAlert1('Message', 'Refreshing.....');
+       window.location.reload();
+    }
   }
+<<<<<<< HEAD
     isLocationAvailable(){
 
     if (this.locationTracker.addr == undefined) {
@@ -127,6 +144,8 @@ export class LocationPage {
        window.location.reload();
     }
   }
+=======
+>>>>>>> 034d2c0f24521e8c31a5fe5f314913e292bf5f5e
   showAlert1(title, text) {
         //this.loading.dismiss();
 

@@ -1,9 +1,14 @@
-import { Component } from '@angular/core';
+\import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+<<<<<<< HEAD
 import { LocationTrackerProvider } from '../providers/location-tracker/location-tracker';
 import { LocationAccuracy } from '@ionic-native/location-accuracy';
+=======
+import { LocationAccuracy } from '@ionic-native/location-accuracy';
+import { LocationTrackerProvider } from '../providers/location-tracker/location-tracker';
+>>>>>>> 034d2c0f24521e8c31a5fe5f314913e292bf5f5e
 
 import { HomePage } from '../pages/home/home';
 @Component({
@@ -18,7 +23,8 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-    this.locationAccuracy.canRequest().then((canRequest: boolean) => {
+
+       this.locationAccuracy.canRequest().then((canRequest: boolean) => {
 
          if(canRequest) {
 
